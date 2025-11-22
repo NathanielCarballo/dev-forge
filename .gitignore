@@ -1,0 +1,30 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# .NET / C#
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode / IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
