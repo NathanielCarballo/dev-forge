@@ -1,0 +1,47 @@
+<div>
+<h1 id="animatedCarHeader" class="newCarHeader pageHeader"> Please Enter Customer's Car Information </h1>
+</div>
+<div class="carForm">
+    <mat-form-field class="make-db select">
+        <mat-label>Make</mat-label>
+        <mat-select [(value)]="carDbSelected" (selectionChange)="filterFunctionDb()" [formControl]="make" (input)="capture($event)" required>
+            <mat-option *ngFor="let make of carMakeList" [value]="make.make">{{make.make}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="model-db select">
+        <mat-label>Model</mat-label>
+        <mat-select [(value)]="carDbModelSelected" [formControl]="model" (input)="capture($event)" required>
+            <mat-option *ngFor="let model of filteredMakeList" [value]="model.value">{{model.value}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="year select">
+        <mat-label>Year</mat-label>
+        <mat-select [(value)]="inputYear" [formControl]="year" (input)="capture($event)" required>
+        <mat-option *ngFor="let year of descendingSeries" [value]="year">{{year}}</mat-option>
+        <textarea matInput placeholder="Year of your vehicle"></textarea>
+    </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="color select">
+        <mat-label>Car Color</mat-label>
+        <mat-select [formControl]="color" required panelClass="color-panel-{{color.value}}">
+            <mat-option value="Red">Red</mat-option>
+            <mat-option value="Green">Green</mat-option>
+            <mat-option value="Blue">Blue</mat-option>
+            <mat-option value="Purple">Purple</mat-option>
+            <mat-option value="Orange">Orange</mat-option>
+            <mat-option value="Yellow">Yellow</mat-option>
+            <mat-option value="Black">Black</mat-option>
+            <mat-option value="Grey">Grey</mat-option>
+            <mat-option value="White">White</mat-option>  
+        </mat-select>
+    </mat-form-field>
+</div>
+<!--<div class="carOptionButtons buttonSection">
+    <button mat-raised-button class="back button pageButtonLeft" (click)="navigateToPreviousScreen()">Back</button>
+    <button mat-raised-button class="submit button pageButtonRight" (click)="navigateToServices()" [disabled] = "dbMake.invalid || date.invalid || dbModel.invalid || panelColor.invalid">Submit</button>
+</div>-->
+
+

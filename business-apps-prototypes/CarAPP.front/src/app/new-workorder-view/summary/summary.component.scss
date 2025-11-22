@@ -1,0 +1,49 @@
+.summary-page {
+    display: inline-flexbox;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    margin-right: auto;
+    margin-left: auto;
+    height: 25rem;
+    width: 60rem;
+    overflow-y: scroll;
+}
+
+.contact-header{
+    margin-top: 20px;
+}
+
+.contact-information-section{
+    display:flex;
+    div {
+        flex:2;
+    }
+}
+
+.car-information-section {
+    display:flex;
+    div {
+        flex:2;
+    }
+}
+
+.service-container{
+    display:flex;
+    div {
+        flex:1;
+    }
+}
+
+.service-information-section{
+    display:flex;
+    div {
+        flex:1;
+    }
+}
+
+.section-line {
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+}
+

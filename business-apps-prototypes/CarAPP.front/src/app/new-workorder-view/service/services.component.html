@@ -1,0 +1,35 @@
+<div>
+<h1 id="animated-service-header" class="service pageHeader ">Pick the desired services</h1>
+</div>
+
+<div class="servicePage">
+    <mat-form-field class="inputs">
+        <mat-label>Services</mat-label>
+        <mat-select [formControl] = "serviceControl" multiple (selectionChange)="doSomething(serviceControl)">
+           <mat-select-trigger>
+                {{serviceControl.value?.[0]?.name || ' '}}
+                <span *ngIf="(serviceControl.value?.length || 0) > 1">
+                    (+{{(serviceControl.value?.length || 0) - 1}} {{serviceControl.value?.length === 2 ? 'other': 'others'}})
+                </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let service of services"  [value]="service" (click) = "toggleService(service)" (click) = "calculateTotalPrice()">
+                {{service.name}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="serviceControl.hasError('required')">Please select a service</mat-error>
+    </mat-form-field>
+
+    
+        
+    <div class="shoppingCart">
+        <h4 class="shoppingCartHeader">Service Cart</h4>
+        <div class="shopping-cart-section" *ngFor="let item of cartArray">
+            <div>
+                <p>{{item.name}}</p>
+            </div>
+            <div>
+                <p>{{item.price}}</p>
+            </div>
+        </div>
+    </div>
+</div>

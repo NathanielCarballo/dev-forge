@@ -1,0 +1,68 @@
+
+<!---
+<app-new-customer (next)="nextStep()" *ngIf= "onStep == 1"></app-new-customer>
+
+<app-new-car (next)="nextStep()" *ngIf= "onStep == 2"></app-new-car>
+
+<app-services (next)="nextStep()" *ngIf= "onStep == 3"></app-services>-->
+<div class="gradientBox">
+<mat-horizontal-stepper class="matStepper" linear="true" labelPosition ="bottom">
+    <mat-step [stepControl]="firstFormGroup" label="Customer Information" state="person">
+        <form [formGroup]="firstFormGroup">
+            <app-new-customer [formGroup]="firstFormGroup" (onChange)="submitDataFirstForm()">
+            </app-new-customer>
+            <div class="buttonSection">
+                <button mat-raised-button matStepperPrevious class="button previousButton pageButtonLeft" (click)="callDialogFunction()">Cancel</button>
+                <button mat-raised-button matStepperNext class="button nextButton pageButtonRight" (click)="refreshCar()" (click)="submitDataFirstForm()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Car Information" state="car">
+        <form [formGroup]="secondFormGroup">
+            <app-new-car [formGroup]="secondFormGroup" (onChange)="submitDataSecondForm()">      
+            </app-new-car>
+            <div class="carButtons buttonSection">
+                <button mat-raised-button matStepperPrevious class="button previousButton pageButtonLeft" (click)="refreshCustomer()" >Back</button>
+                <button mat-raised-button matStepperNext class="button nextButton pageButtonRight" (click)="refreshService();submitDataSecondForm();submit()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup" label="Services" state="services">
+        <form [formGroup]="thirdFormGroup">
+            <app-services [formGroup]="thirdFormGroup" (onChange)="submitDataThirdForm()"></app-services>
+            <div class="buttonSection">
+                <button mat-raised-button matStepperPrevious class="button previousButton pageButtonLeft" (click)="refreshCar()">Back</button>
+                <button mat-raised-button matStepperNext class="button nextButton pageButtonRight" (click)="submitDataThirdForm();refreshSummary()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step label="Summary" state="summary">
+        <app-summary></app-summary>
+        <div class="summary-buttons buttonSection">
+            <button mat-raised-button matStepperPrevious class="button previousButton pageButtonLeft" (click)="refreshService()">Back</button>
+            <button mat-raised-button matStepperNext class="button nextButton pageButtonRight">Final</button>
+        </div>
+    </mat-step>
+
+
+      <!-- Icon overrides. -->
+    <ng-template matStepperIcon="edit">
+        <mat-icon>border_color</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="done">
+        <mat-icon>done_outline</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="person">
+        <mat-icon>accessibility_new</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="car">
+        <mat-icon>directions_car</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="services">
+        <mat-icon>build</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="summary">
+         <mat-icon>description</mat-icon>
+    </ng-template>
+</mat-horizontal-stepper>
+</div>

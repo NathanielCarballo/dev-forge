@@ -1,0 +1,27 @@
+<div>
+<h1 id="animatedCustomerHeader" class="newCustomerHeading pageHeader">Please Enter Customer Information</h1>
+</div>
+<div class="customerPage">
+    <div class="userForm">
+        <mat-form-field class="firstName input">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" [formControl]="firstName" (input)="capture($event)" autocomplete="off" required>
+            <mat-error *ngIf="firstName.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="lastName input">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" [formControl]="lastName" (input)="capture($event)" autocomplete="off" required>
+            <mat-error *ngIf="lastName.invalid">{{getLastNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="email input">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" [formControl]="email" (input)="capture($event)" autocomplete="off" required>
+            <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+   <div class="customerOptionButtons buttonSection">
+        <!--<button mat-raised-button class="cancel button pageButtonLeft" (click)="openDialog()">Cancel</button>
+         <button mat-raised-button class="submit button pageButtonRight" (click)="this.next.emit()" 
+        [disabled] = "email.invalid || firstName.invalid || lastName.invalid">Submit</button>-->
+    </div>
+</div>

@@ -1,0 +1,44 @@
+.servicePage{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.inputs{
+    margin-right: 15px;
+    margin-top: 25px;
+    width: 250px;
+    height: 80px;
+  
+}
+
+.shoppingCartHeader{
+    text-align: center;
+}
+
+.shoppingCart{
+    display: block;
+    text-align: center;
+    background-color: black;
+    opacity: .5;
+    margin-top: 25px;;
+    width: 240px;
+    height: 280px;
+    .shopping-cart-section{
+        display:flex;
+        div{
+            flex:1;
+        }
+    }
+}
+
+.serviceButtonOptions{
+    display: flex;
+    justify-content: space-be8ween;
+    margin-top: 10.5px;
+}
+
+.ng-star-inserted{
+    text-align: center;
+}

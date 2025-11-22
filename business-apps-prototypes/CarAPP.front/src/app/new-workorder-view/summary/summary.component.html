@@ -1,0 +1,73 @@
+<div>
+    <h1 id="animated-summary-header" class="summary pageHeader ">Review the summary</h1>
+</div>
+
+<div class="summary-page">
+    <div class="contact-information-container">
+        <h4 class="contact-header">Contact Information</h4>
+       
+    <div class="contact-information-section section-body">
+        <div class="first-name detail">
+            <h5>First Name</h5>
+            <p>{{firstName}}</p>
+        </div>
+        <div class="last-name detail">
+            <h5>Last Name</h5>
+            <p>{{lastName}}</p>
+        </div>
+        <div class="email detail">
+            <h5>Email</h5>
+            <p>{{email}}</p>
+        </div>
+    </div>
+    </div>
+    <div class="car-information-container">
+        <div class="section-line"></div>
+        <h4>Car Information</h4>
+    <div class="car-information-section section-body">
+        <div class="make detail">
+            <h5>Make</h5>
+            <p>{{make}}</p>
+        </div>
+        <div class="model detail">
+            <h5>Model</h5>
+            <p>{{model}}</p>
+        </div>
+        <div class="color detail">
+            <h5>Vehicle Color</h5>
+            <p>{{color}}</p>
+        </div>
+        <div class="year detail">
+            <h5>Vehicle Year</h5>
+            <p>{{year}}</p>
+        </div>
+    </div>
+    </div>
+    <div class="service-information-container">
+        <div class="section-line"></div>
+        <h4>Service Information</h4>
+        <div class="service-container section-body">
+            <div>
+                <h5 class="service-title detail">Service</h5>
+            </div>
+            <div>
+                <h5 class="price-title detail">Price</h5>
+            </div>
+            
+        </div>
+        <div class="service-information-section" *ngFor="let item of cart">
+            <div>
+                <p class="item-name detail">{{item.name}}</p>
+            </div>
+            <div>
+                <p class="item-price detail">{{item.price}}</p>
+            </div>
+        </div>
+        <h5>Subtotal</h5>
+        <p>{{subTotal}}</p>
+        <h5>Tax</h5>
+        <p>{{tax}}</p>
+        <h5>Total</h5>
+        <p>{{totalPrice}}</p>
+    </div>
+</div>
